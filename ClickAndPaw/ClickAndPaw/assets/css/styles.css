@@ -1,0 +1,946 @@
+/* ==========================================================================
+   Proyecto: Click & Paw
+   Archivo: styles.css
+   Descripción: Hoja de estilos principal para el frontend del sitio.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. VARIABLES, RESET Y ESTILOS BASE
+   ========================================================================== */
+:root {
+    /* ... (tus variables se quedan igual) ... */
+    --color-peach-bg: #FFC49B;
+    --color-licorice-text: #130303;
+    --color-fern-green: #566E3D;
+    --color-action-red: #CE4257;
+    --color-raisin-black: #342E37;
+    --color-white: #FFFFFF;
+    --color-light-gray-bg: #fdf6f0;
+    --color-dark-green: #005f36;
+    --color-dark-cyan:rgb(0, 92, 95);
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    --transition-normal: 0.3s;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-primary); 
+    background-color: var(--color-light-gray-bg); 
+    color: var(--color-licorice-text); 
+    line-height: 1.6; 
+}
+
+.container { max-width: 1200px; 
+    margin: 0 auto; 
+    width: 100%; 
+    padding: 0 2rem; 
+}
+
+/* ==========================================================================
+   2. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+/* ... (tu header se queda igual) ... */
+.header { background-color: var(--color-fern-green); 
+    padding: 1rem 0; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); 
+    position: sticky; 
+    top: 0; z-index: 1000; 
+}
+
+.nav-container { max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { font-family: var(--font-secondary); 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color: var(--color-white); 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+}
+
+.nav-menu { display: flex; 
+    list-style: none; 
+    gap: 1.5rem; 
+    align-items: center; 
+    margin: 0; 
+}
+
+.nav-menu a { color: var(--color-white); 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: background-color var(--transition-normal); 
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+}
+
+.nav-menu a:hover, .nav-menu a.active { background-color: var(--color-action-red); 
+}
+
+.menu-toggle { display: none; 
+    background: none; 
+    border: none; 
+    color: var(--color-white); 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+}
+
+.nav-menu .btn-login { background-color: transparent; 
+    border: 2px solid var(--color-white); 
+    color: var(--color-white); 
+    padding: 0.4rem 0.8rem; 
+    font-weight: 500; 
+    transition: all var(--transition-normal); 
+}
+
+.nav-menu .btn-login:hover { background-color: var(--color-white); 
+    color: var(--color-fern-green); 
+}
+
+/* ==========================================================================
+   3. BOTONES Y ELEMENTOS DE ACCIÓN
+   ========================================================================== */
+.btn { display: inline-block; 
+    padding: 1rem 2.5rem; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    text-decoration: none; 
+    text-align: center; 
+    transition: all var(--transition-normal); 
+}
+
+.btn-primary { background-color: var(--color-action-red); 
+    color: var(--color-white); 
+}
+
+.btn-primary:hover { background-color: #b33a4a; 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 20px rgba(206, 66, 87, 0.4); 
+}
+
+/* --- REGLA CORREGIDA PARA BTN-SECONDARY --- */
+.btn-secondary {
+    background-color: transparent;
+    /* Estilo por defecto para fondos claros */
+    border: 2px solid var(--color-raisin-black);
+    color: var(--color-raisin-black);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-raisin-black);
+    color: var(--color-white);
+}
+
+/* Regla específica para cuando el botón está en un fondo oscuro como el .hero */
+.hero .btn-secondary {
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.hero .btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-fern-green);
+}
+
+
+/* ==========================================================================
+   4. SECCIONES DE PÁGINA (INDEX Y GENERALES)
+   ========================================================================== */
+.section-title {
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    color: var(--color-raisin-black);
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* --- Hero Section (Index y Páginas Interiores) --- */
+.hero, .page-hero {
+    color: var(--color-white);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(86, 110, 61, 0.85) 0%, rgba(52, 46, 55, 0.85) 100%), url('../images/inicio.jpg') center/cover no-repeat;
+    min-height: 84vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-hero {
+    background: linear-gradient(135deg, var(--color-fern-green), var(--color-dark-cyan)); 
+}
+
+.hero-content, .page-hero .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1, .page-hero h1 {
+    font-family: var(--font-secondary);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p, .page-hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- Mission, Help & Pets Sections --- */
+.mission-section, .featured-pets, .help-section {
+    padding: 5rem 0;
+}
+.mission-section { background-color: var(--color-light-gray-bg); 
+}
+
+.featured-pets { background-color: var(--color-peach-bg); 
+}
+
+.mission-grid, .help-grid, .pets-grid {
+    display: grid;
+    gap: 2.5rem;
+}
+.mission-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+}
+
+.help-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr); 
+}
+
+.pets-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+}
+
+.mission-card, .help-card, .pet-card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+.mission-card:hover, .help-card:hover, .pet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.mission-card, .help-card {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-icon, .help-icon { font-size: 3rem; 
+    margin-bottom: 1rem; 
+}
+
+.mission-card h3, .help-card h3 { color: var(--color-fern-green); 
+    margin-bottom: 1rem; font-size: 1.5rem; 
+    font-family: var(--font-secondary); 
+}
+
+.mission-card p, .help-card p { color: #555; 
+    flex-grow: 1; 
+    margin-bottom: 1.5rem; 
+}
+
+.help-card .btn { margin-top: auto; 
+}
+
+.pet-card { overflow: hidden; 
+}
+
+.pet-image { width: 100%; 
+    height: 250px; 
+    background: linear-gradient(135deg, var(--color-fern-green), var(--color-action-red)); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 5rem; 
+}
+
+.pet-info { padding: 1.5rem; 
+}
+
+.pet-name { font-family: var(--font-secondary); 
+    font-size: 1.5rem; 
+    color: var(--color-raisin-black); 
+    margin-bottom: 0.5rem; 
+}
+
+.pet-details { color: #666;
+    margin-bottom: 1rem;
+}
+
+.pet-description { margin-bottom: 1.5rem; 
+}
+
+.center-button { text-align: center; 
+    margin-top: 3rem; 
+}
+
+/* --- CTA Section --- */
+.cta-section { background-color: var(--color-fern-green); 
+    color: var(--color-white);
+    padding: 5rem 2rem; 
+    text-align: center; 
+}
+
+.cta-section h2 { font-family: var(--font-secondary); 
+    font-size: 2.5rem; 
+    margin-bottom: 1rem;
+}
+
+.cta-section p { font-size: 1.2rem; 
+    margin-bottom: 2rem; 
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    opacity: 0.95; 
+}
+
+/* ==========================================================================
+   5. PÁGINA DE CONTACTO Y FORMULARIOS
+   ========================================================================== */
+.contact-wrapper { display: flex; 
+    gap: 3rem; 
+    padding: 4rem 2rem; 
+    max-width: 1200px; 
+    margin: 2rem auto; 
+    background-color: var(--color-white); 
+    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+}
+
+.contact-text { flex: 1; 
+}
+
+.contact-text h1 { font-family: var(--font-secondary); 
+    font-size: 3rem; 
+    color: var(--color-raisin-black); 
+    margin-bottom: 1.5rem; 
+}
+
+.contact-info { margin-bottom: 1.5rem; 
+    line-height: 1.8; 
+}
+
+.social-links { display: flex; 
+    gap: 1rem; 
+    margin-bottom: 2rem; 
+}
+
+.social-links a { transition: transform var(--transition-normal); 
+}
+
+.social-links a:hover { transform: scale(1.1); 
+}
+
+.social-links img { width: 32px; 
+    height: 32px; 
+}
+
+.contact-img { flex: 1; 
+    display: table-column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.contact-img img { width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    object-fit: cover; 
+}
+
+.two-inputs { display: flex; 
+    gap: 1rem; 
+}
+
+form { display: flex; 
+    flex-direction: column; 
+    gap: 1.2rem; 
+}
+
+input, textarea { width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    font-size: 1rem; 
+    font-family: var(--font-primary); 
+}
+
+input:focus, textarea:focus { outline: none; 
+    border-color: var(--color-action-red);
+}
+
+textarea { min-height: 120px; 
+    resize: vertical; 
+}
+form .btn { width: auto; 
+    align-self: flex-start; 
+}
+
+/* ==========================================================================
+   6. PÁGINA DE PROCESO Y ADOPCIÓN
+   ========================================================================== */
+.breadcrumb { max-width: 900px; 
+    margin: 2rem auto 0; 
+    padding: 0 2rem; 
+}
+
+.breadcrumb-list { display: flex; 
+    list-style: none; 
+    gap: 0.5rem; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+.breadcrumb-list a { color: var(--color-fern-green); 
+    text-decoration: none; 
+    transition: color var(--transition-normal); 
+}
+
+.breadcrumb-list a:hover { color: var(--color-action-red); 
+}
+
+.breadcrumb-separator { color: #666; 
+}
+
+.breadcrumb-current { color: #666; 
+}
+
+.form-section { max-width: 900px; 
+    margin: 2rem auto; 
+    padding: 0 2rem 4rem; 
+}
+
+.pet-info-card { background-color: var(--color-white); 
+    border-radius: 12px; 
+    padding: 2rem; 
+    margin-bottom: 2rem; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    display: flex; 
+    gap: 2rem; 
+    align-items: center; 
+}
+
+.pet-image-small { width: 120px; 
+    height: 120px; 
+    background: linear-gradient(135deg, var(--color-fern-green), var(--color-action-red)); 
+    border-radius: 12px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 4rem; 
+    flex-shrink: 0; 
+    overflow: hidden; 
+}
+
+.pet-image-small img { width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.pet-info-text h2 { color: var(--color-raisin-black); 
+    margin-bottom: 0.5rem; 
+}
+
+.pet-info-text p { color: #666;
+}
+
+.form-card { background-color: var(--color-white); 
+    border-radius: 12px; 
+    padding: 3rem; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+
+.form-title { color: var(--color-raisin-black); 
+    margin-bottom: 0.5rem; 
+    font-size: 2rem; 
+}
+
+.form-subtitle { color: #666; 
+    margin-bottom: 2rem; 
+    font-size: 1.1rem; 
+}
+
+.form-group { margin-bottom: 1.5rem; 
+}
+
+.form-group label { display: block; 
+    margin-bottom: 0.5rem; 
+    font-weight: 600; 
+    color: var(--color-raisin-black); 
+}
+
+.required { color: var(--color-action-red); 
+}
+
+.form-group input:focus, .form-group textarea:focus { outline: none; 
+    border-color: var(--color-action-red); 
+}
+
+.form-group textarea { resize: vertical; 
+    min-height: 150px; 
+}
+
+.form-row { display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 1.5rem; 
+}
+
+.char-counter { text-align: right; 
+    font-size: 0.9rem; 
+    color: #666; 
+    margin-top: 0.25rem; 
+}
+
+.char-counter.warning { color: var(--color-action-red); 
+}
+
+.helper-text { font-size: 0.9rem; 
+    color: #666; 
+    margin-top: 0.25rem; 
+}
+
+.error-message { color: var(--color-action-red); 
+    font-size: 0.9rem; 
+    margin-top: 0.25rem; 
+    display: none; 
+}
+
+.error-message.show { display: block; 
+}
+
+.form-group.error input, .form-group.error textarea { border-color: var(--color-action-red); 
+}
+
+.form-actions { display: flex; 
+    gap: 1rem; 
+    margin-top: 2rem; 
+    justify-content: flex-end; 
+}
+
+.process-timeline { position: relative; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.process-timeline::after { content: ''; 
+    position: absolute; 
+    width: 3px; 
+    background-color: var(--color-fern-green); 
+    top: 0; 
+    bottom: 0; 
+    left: 40px; 
+    margin-left: -1.5px; 
+    opacity: 0.2; 
+}
+
+.timeline-item { padding: 1rem 0 3rem 100px; 
+    position: relative; 
+}
+
+.timeline-icon { position: absolute; 
+    left: 40px; 
+    transform: translateX(-50%); 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    background-color: var(--color-fern-green); 
+    color: var(--color-white); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    border: 4px solid var(--color-light-gray-bg); 
+    z-index: 1; 
+}
+
+.timeline-content { background-color: var(--color-white); 
+    padding: 2rem; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+    position: relative; 
+}
+
+.timeline-content h3 { font-family: var(--font-secondary); 
+    color: var(--color-raisin-black); 
+    font-size: 1.6rem; 
+    margin-bottom: 0.75rem; 
+}
+
+.timeline-content p { color: #555; 
+}
+
+.timeline-content a { color: var(--color-action-red); 
+    font-weight: bold; 
+    text-decoration: none; 
+}
+
+.timeline-content a:hover { text-decoration: underline; 
+}
+
+/* ==========================================================================
+   PÁGINA "SOBRE NOSOTROS"
+   ========================================================================== */
+.about-section {
+    padding: 3rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.about-section:last-of-type {
+    border-bottom: none;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 2.2rem;
+    color: var(--color-raisin-black);
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.mission-vision-block {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.mission-vision-block h3 {
+    font-family: var(--font-secondary);
+    color: var(--color-fern-green);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    text-align: center;
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-card h4 {
+    font-family: var(--font-secondary);
+    color: var(--color-raisin-black);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Responsive para "Sobre Nosotros" */
+@media (max-width: 768px) {
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   PÁGINA DE GALERÍA (FILTROS Y RESULTADOS)
+   ========================================================================== */
+.filters-section {
+    background-color: var(--color-white);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.search-bar {
+    margin-bottom: 1.5rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color var(--transition-normal);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-action-red);
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-raisin-black);
+}
+
+.filter-group select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: var(--color-white);
+    cursor: pointer;
+    font-family: var(--font-primary);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.results-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.results-header {
+    margin-bottom: 2rem;
+}
+
+.results-count {
+    font-size: 1.1rem;
+    color: var(--color-raisin-black);
+}
+
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.no-results h2 {
+    color: var(--color-raisin-black);
+    margin-bottom: 1rem;
+}
+
+.no-results p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   PÁGINA DE LOGIN DE ADMINISTRADOR
+   ========================================================================== */
+.login-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    min-height: 70vh; /* Ajusta la altura para que no ocupe toda la pantalla y se vea el footer */
+}
+
+.login-form-container {
+    background-color: var(--color-white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.error-message-box {
+    padding: 1rem;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.footer { background-color: var(--color-raisin-black); 
+    color: var(--color-white); 
+    padding-top: 4rem; 
+}
+
+.footer-content { max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 2.5rem; 
+    margin-bottom: 3rem; 
+}
+
+.footer-section h3 { font-family: var(--font-secondary); 
+    margin-bottom: 1.5rem; 
+    color: var(--color-peach-bg); 
+    font-size: 1.4rem; 
+}
+
+.footer-section p { opacity: 0.8; 
+}
+
+.footer-section ul { list-style: none; 
+}
+
+.footer-section ul li { margin-bottom: 0.75rem; 
+}
+
+.footer-section a { color: var(--color-white); 
+    text-decoration: none; 
+    transition: color var(--transition-normal); 
+    opacity: 0.8; 
+}
+
+.footer-section a:hover { color: var(--color-action-red); 
+    opacity: 1; 
+}
+
+.footer-bottom { text-align: center; 
+    padding: 1.5rem; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    opacity: 0.8; 
+    font-size: 0.9rem; 
+    background-color: var(--color-licorice-text); 
+}
+
+
+/* ==========================================================================
+   8. DISEÑO RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px) {
+    .contact-wrapper { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-menu { display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        right: 0; 
+        background-color: var(--color-fern-green); 
+        flex-direction: column; 
+        padding: 1rem 0; 
+        gap: 0; 
+        border-top: 1px solid rgba(255,255,255,0.1); 
+    }
+
+    .nav-menu.active { display: flex; 
+    }
+    
+    .nav-menu li { 
+        width: 100%; 
+    }
+
+    .nav-menu a { 
+        width: 100%; 
+        padding: 1rem 2rem; 
+        text-align: left;
+        border-radius: 0; 
+    }
+
+    .nav-menu .btn-login {
+        border: none; 
+        background-color: transparent; 
+        padding: 1rem 2rem; 
+        text-align: left;
+        display: block;
+    }
+    
+    .nav-menu .btn-login:hover {
+        background-color: var(--color-action-red); 
+        color: var(--color-white); 
+    }
+
+    .hero-content h1, .page-hero h1 { font-size: 2rem; }
+    .hero-content p, .page-hero p { font-size: 1.1rem; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 300px; }
+    .section-title { font-size: 2rem; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    
+    .pet-info-card { flex-direction: column; 
+        text-align: center; 
+    }
+
+    .form-card { padding: 2rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-actions { flex-direction: column; }
+    
+    .process-timeline::after { left: 25px; }
+    .timeline-item { padding-left: 70px; }
+    .timeline-icon { left: 25px; 
+        width: 40px; 
+        height: 40px; 
+        font-size: 1.2rem; 
+    }
+    
+    .mission-vision-grid { grid-template-columns: 1fr; }
+}
+

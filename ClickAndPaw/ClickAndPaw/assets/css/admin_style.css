@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Proyecto: Click & Paw - ESTILOS DEL PANEL DE ADMINISTRACIÓN
+   ========================================================================== */
+
+/* ==========================================================================
+   1. IMPORTACIONES Y VARIABLES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --color-peach-bg: #FFC49B;
+    --color-licorice-text: #130303;
+    --color-fern-green: #566E3D;
+    --color-action-red: #CE4257;
+    --color-raisin-black: #342E37;
+    --color-white: #FFFFFF;
+    --color-light-gray-bg: #fdf6f0;
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    --transition-normal: 0.3s;
+}
+
+/* ==========================================================================
+   2. RESET Y ESTILOS BASE
+   ========================================================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-primary); background-color: var(--color-light-gray-bg); color: var(--color-licorice-text); }
+
+/* ==========================================================================
+   3. PÁGINA DE LOGIN
+   ========================================================================== */
+.login-body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: var(--color-raisin-black); padding: 2rem; }
+.login-container { padding: 40px; background: var(--color-white); border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); width: 100%; max-width: 420px; text-align: center; }
+.login-container h2 { font-family: var(--font-secondary); color: var(--color-raisin-black); margin-bottom: 25px; font-size: 2rem; }
+.back-to-site-link { margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; }
+.back-to-site-link a { color: var(--color-fern-green); text-decoration: none; font-size: 0.9rem; transition: color var(--transition-normal); }
+.back-to-site-link a:hover { color: var(--color-action-red); text-decoration: underline; }
+
+/* ==========================================================================
+   4. ESTRUCTURA DEL PANEL DE ADMINISTRACIÓN (SIDEBAR, MAIN CONTENT)
+   ========================================================================== */
+.admin-wrapper { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; background-color: var(--color-raisin-black); color: var(--color-white); padding: 25px 20px; flex-shrink: 0; }
+.sidebar-logo { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-secondary); font-size: 24px; font-weight: 700; text-decoration: none; color: var(--color-white); margin-bottom: 40px; }
+.sidebar nav ul { list-style: none; }
+.sidebar nav ul li a { display: block; color: var(--color-white); text-decoration: none; padding: 15px 20px; border-radius: 8px; margin-bottom: 10px; font-weight: 500; transition: background-color var(--transition-normal), transform var(--transition-normal); }
+.sidebar nav ul li a:hover, .sidebar nav ul li a.active { background-color: var(--color-action-red); transform: translateX(5px); }
+.main-content { flex-grow: 1; padding: 40px; background-color: var(--color-light-gray-bg); }
+.main-content h1 { font-family: var(--font-secondary); color: var(--color-raisin-black); margin-bottom: 25px; border-bottom: 2px solid var(--color-raisin-black); padding-bottom: 15px; }
+
+/* ==========================================================================
+   5. COMPONENTES REUTILIZABLES (FORMULARIOS, TABLAS, BOTONES, ETC.)
+   ========================================================================== */
+
+/* --- Contenedores --- */
+.form-card, .table-container { background-color: var(--color-white); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 2rem; }
+.form-card { padding: 2rem 3rem; }
+.table-container { overflow-x: auto; }
+
+/* --- Formularios --- */
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-raisin-black); }
+.form-group input[type="text"], .form-group input[type="password"], .form-group input[type="number"], .form-group input[type="file"], .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; font-family: var(--font-primary); transition: border-color var(--transition-normal); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--color-action-red); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.form-actions { display: flex; gap: 1rem; margin-top: 2rem; justify-content: flex-end; border-top: 1px solid #eee; padding-top: 1.5rem; }
+.helper-text { font-size: 0.85rem; color: #666; margin-top: 5px; display: block; }
+
+/* --- Botones --- */
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; text-decoration: none; text-align: center; transition: all var(--transition-normal); }
+.btn-primary { background-color: var(--color-action-red); color: var(--color-white); }
+.btn-primary:hover { background-color: #b33a4a; }
+.btn-secondary { background-color: #6c757d; color: var(--color-white); }
+.btn-secondary:hover { background-color: #5a6268; }
+
+/* --- Tablas --- */
+table { width: 100%; border-collapse: collapse; }
+table th, table td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; vertical-align: middle; }
+table th { background-color: var(--color-raisin-black); color: var(--color-white); font-family: var(--font-secondary); }
+table tr:last-child td { border-bottom: none; }
+table tr:nth-child(even) { background-color: var(--color-light-gray-bg); }
+.table-pet-image { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; }
+.no-image-text { color: #999; font-style: italic; font-size: 0.9rem; }
+.empty-cell { text-align: center; padding: 3rem 1rem; color: #777; }
+
+/* --- Botones de Acciones en Tablas --- */
+.actions a.btn, .actions .btn { padding: 6px 12px; font-size: 13px; margin-bottom: 5px; display: block; width: 100%; }
+.btn-edit { background-color: var(--color-fern-green); color: var(--color-white); }
+.btn-edit:hover { background-color: #455a2f; }
+.btn-delete { background-color: #dc3545; color: var(--color-white); }
+.btn-delete:hover { background-color: #c82333; }
+
+/* --- Notificaciones --- */
+.message { padding: 15px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #e8b3c7; background-color: var(--color-peach-bg); color: var(--color-licorice-text); }
+.error-message { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb; }
+
+/* --- Acciones de Tabla --- */
+.table-actions {
+    display: flex;
+    justify-content: flex-start; /* Alinea el botón a la izquierda */
+    margin-top: 1.5rem;
+    padding-left: 15px; /* Pequeño ajuste para alineación visual con la tabla */
+}
+
+/* Ajustes para el botón de Guardar Cambios en la tabla */
+.table-actions .btn {
+    width: auto; /* Permite que el botón tenga un ancho automático */
+    padding: 10px 20px;
+    font-size: 1rem;
+}
