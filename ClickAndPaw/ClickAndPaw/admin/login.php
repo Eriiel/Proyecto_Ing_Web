@@ -74,9 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Iniciar sesión</button>
         </form>
 
-        <!-- ================================================== -->
-        <!-- ENLACE AÑADIDO PARA VOLVER AL SITIO PÚBLICO -->
-        <!-- ================================================== -->
         <div class="back-to-site-link">
             <a href="../index.php">← Volver al sitio principal</a>
         </div>
@@ -84,4 +81,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
 </body>
+
 </html>
